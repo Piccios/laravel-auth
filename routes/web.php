@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 
 
@@ -29,6 +29,6 @@ Route::get('/home', [GuestHomeController::class, 'index'])->name('home');
 
 route::middleware('auth')->name('admin.')->prefix('admin/')->group(
     function(){
-        Route::resource('project', MainController::class);
+        Route::resource('projects', MainController::class);
     }
 );
