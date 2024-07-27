@@ -61,7 +61,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 "nome" => "proj-html-vuejs",
-                "linguaggio" => ["php", "Vue", "JavaScript"],
+                "linguaggio" => "php, Vue, JavaScript",
                 "url_repository" => "https://github.com/Piccios/proj-html-vuejs",
             ],
             [
@@ -71,12 +71,12 @@ class ProjectSeeder extends Seeder
             ],
             [
                 "nome" => "vite-yu-gi-oh",
-                "linguaggio" => ["Vue", "JavaScript"],
+                "linguaggio" => "Vue, JavaScript",
                 "url_repository" => "https://github.com/Piccios/vite-yu-gi-oh",
             ],
             [
                 "nome" => "vite-comics",
-                "linguaggio" => ["Vue", "JavaScript"],
+                "linguaggio" =>"Vue, JavaScript",
                 "url_repository" => "https://github.com/Piccios/vite-comics",
             ],
             [
