@@ -23,7 +23,7 @@
                             <td>{{ $project->linguaggio }}</td>
                             <td><a href=" {{ $project->url_repository }}">Click per visualizzare</a></td>
                             <td>
-                                <a href="{{ route('admin.project.edit', ['project' => $project->id]) }}"
+                                <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}"
                                     class="btn btn-primary d-flex justify-content-center">Modifica</a>
                             </td>
                         </tr>
