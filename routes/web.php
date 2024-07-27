@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\HomeController as GuestHomeController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,16 +17,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Auth::routes();
 
+
+Auth::routes();
+Route::get('/', [GuestHomeController::class, 'index'])->name('home');
 Route::get('/home', [GuestHomeController::class, 'index'])->name('home');
 
-Route::middleware('auth')->name('admin.')->prefix('admin/')->group(
+
+route::middleware('auth')->name('admin.')->prefix('admin/')->group(
     function(){
-        Route::get('secret-home', [AdminHomeController::class, 'index'])->name('admin.home');
-        route::resource('user', AdminHomeController::class);
+        Route::resource('project', MainController::class);
     }
 );
