@@ -6,7 +6,7 @@
 
 
         <div class="col-12">
-            <form action="{{ route('admin.project.store') }}" method="POST" id="creation_form">
+            <form action="{{ route('admin.projects.store') }}" method="POST" id="creation_form">
                 @csrf
 
                 <div class="input-group-sm container mb-5 w-50">
@@ -22,13 +22,13 @@
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="url_repository" id="url_repository" name="url_repository" value="{{ old('url_repository') }}">
                     <div class="d-flex justify-content-between mt-3">
 
-                            <input class="btn btn-primary" type="submit" value="crea un nuovo animale">
-                            <input class="btn btn-warning" type="reset" value="resetta campi">
+                            <input class="btn btn-primary" type="submit" value="crea un nuovo progetto">
+                            <input class="btn btn-warning" type="reset" value="clear">
 
                     </div>
                 </div>
             </form>
-            <a href="{{ route('admin.project.index')}}" class="card-link d-flex justify-content-center">Torna alla lista dei progetti</a>
+            <a href="{{ route('admin.projects.index')}}" class="card-link d-flex justify-content-center">Torna alla lista dei progetti</a>
         </div>
 
     </div>

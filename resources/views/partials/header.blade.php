@@ -15,12 +15,12 @@
                     Homepage</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('admin.project.index')}}"  aria-current="page">
+                    <a class="nav-link" href="{{ route('admin.projects.index')}}"  aria-current="page">
                         Progetti
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" aria-current="page" href="{{ route('admin.project.create')}}">Crea nuovo progetto</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('admin.projects.create')}}">Crea nuovo progetto</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
