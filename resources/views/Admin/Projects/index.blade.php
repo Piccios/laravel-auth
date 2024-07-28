@@ -2,11 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-
-
+        <div class="row justify-content-center text-center">
             <div class="col-12">
-                <table class="table table-dark table-striped">
+                <table class="table table-dark table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -26,9 +24,9 @@
                                 <td>
 
                                     <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}"
-                                        class="btn btn-primary d-flex justify-content-center">Mostra</a>
+                                        class="btn btn-success mb-1 d-flex justify-content-center">Mostra</a>
                                     <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}"
-                                        class="btn btn-primary d-flex justify-content-center">Modifica</a>
+                                        class="btn btn-secondary d-flex justify-content-center">Modifica</a>
                                 </td>
                             </tr>
                         @endforeach
