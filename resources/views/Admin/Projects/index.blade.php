@@ -26,8 +26,12 @@
                                     <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}"
                                         class="btn btn-success mb-1 d-flex justify-content-center">Mostra</a>
                                     <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}"
-                                        class="btn btn-secondary d-flex justify-content-center">Modifica</a>
-                                    <form action=""></form>
+                                        class="btn btn-secondary d-flex justify-content-center mb-1">Modifica</a>
+                                    <form action="{{route('admin.projects.destroy', $project)}}" method="POST" class="form-destroyer" data-project-title="{{$project->nome}}">
+                                        @method("delete")
+                                        @csrf
+                                        <input class="btn btn-danger d-flex justify-content-center" type="submit" value="Elimina"></input>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -38,4 +42,9 @@
 
         </div>
     </div>
+@endsection
+
+@section('additional-scripts')
+    @vite('resources/js/project/delete-index-confirmation.js')
+
 @endsection
