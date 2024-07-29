@@ -3,10 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 class MainController extends Controller
+
 {
+
+
+
     /**
      * Display a listing of the resource.
      */
@@ -29,7 +36,7 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        $data =$request->except('_token');
+        $data = $request->except('_token');
         $newProject = new Project($data);
         $newProject->save();
 
@@ -55,10 +62,13 @@ class MainController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        $data = $request->except('_token');
+        $data = $request->validated();
+        $data["nome"] = Auth::nome()->nome;
+        $data["date"] = Carbon::now();
         $project->update($data);
+
 
         return redirect()->route('admin.projects.show', ['project' => $project->id])->with($project->nome . "e' stato aggiornato correttamente");
     }
