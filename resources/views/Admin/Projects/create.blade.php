@@ -1,36 +1,15 @@
-@extends('layouts.admin')
+@extends('Admin.Projects.layouts.create-or-edit')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
+@section('page-title')
+    Aggiungi un nuovo progetto
+@endsection
 
-
-        <div class="col-12">
-            <form action="{{ route('admin.projects.store') }}" method="POST" id="creation_form">
-                @csrf
-
-                <div class="input-group-sm container mb-5 w-50">
-
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Nome progetto" id="nome" name="nome" value="{{ old('nome') }}">
+@section('form-action')
+    {{route('admin.projects.store')}}
+@endsection
 
 
-                    <label for="linguaggio">linguaggio</label>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="linguaggio" id="linguaggio" name="linguaggio" value="{{ old('linguaggio') }}">
 
-                    <label for="url_repository">url_repository</label>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="url_repository" id="url_repository" name="url_repository" value="{{ old('url_repository') }}">
-                    <div class="d-flex justify-content-between mt-3">
-
-                            <input class="btn btn-primary" type="submit" value="crea un nuovo progetto">
-                            <input class="btn btn-warning" type="reset" value="clear">
-
-                    </div>
-                </div>
-            </form>
-            <a href="{{ route('admin.projects.index')}}" class="card-link d-flex justify-content-center">Torna alla lista dei progetti</a>
-        </div>
-
-    </div>
-</div>
+@section('form-method')
+    @method("POST")
 @endsection

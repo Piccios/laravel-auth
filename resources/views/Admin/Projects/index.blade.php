@@ -27,6 +27,7 @@
                                         class="btn btn-success mb-1 d-flex justify-content-center">Mostra</a>
                                     <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}"
                                         class="btn btn-secondary d-flex justify-content-center">Modifica</a>
+                                    <form action=""></form>
                                 </td>
                             </tr>
                         @endforeach
