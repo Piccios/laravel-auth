@@ -17,14 +17,14 @@
                 <div class="input-group-sm container mb-5 w-50">
 
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Nome progetto" id="nome" name="nome" value="{{ old('nome') }}">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Nome progetto" id="nome" name="nome" value="{{ old('nome', $project->nome) }}">
 
 
                     <label for="linguaggio">Linguaggio</label>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Linguaggio" id="linguaggio" name="linguaggio" value="{{ old('linguaggio') }}">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Linguaggio" id="linguaggio" name="linguaggio" value="{{old('linguaggio', $project->linguaggio ?? '')}}">
 
                     <label for="url_repository">Url_repository</label>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="url_repository" id="url_repository" name="url_repository" value="{{ old('url_repository') }}">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="url_repository" id="url_repository" name="url_repository" value="{{ old('url_repository', $project->url_repository ?? '') }}">
                     <div class="d-flex justify-content-between mt-3">
 
                             <input class="btn btn-primary" type="submit" value="@yield('page-title')">
