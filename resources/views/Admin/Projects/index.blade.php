@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-12">
-                <table class="table table-dark table-striped table-hover">
+                <table class="table table-light table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
